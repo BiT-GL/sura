@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sura</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+<video class="video-bg" id="bgVideo" loop autoplay muted playsinline>
+    <source src="videos/sura.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Foreground Content -->
+  <div class="content">
+    <button onclick="playVideo()">Click Me</button>
+  </div>
+
+  <script>
+    function playVideo() {
+      const video = document.getElementById('bgVideo');
+      video.muted = false; // Unmute it
+      video.play();        // Then play
+    }
+  </script>
+
+</body>
+</html>
